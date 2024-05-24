@@ -8,6 +8,18 @@
             <% acts.forEach( (acts) => {%>
                 <li> <%= acts.name %> <%= acts.money %></li>
             <% }) %>
+            <form method="post" action="activities/donate">
+                <input placeholder="Name" type="text" name="userName"> <br>
+                <input placeholder="Password" type="text" name="password"> <br>
+                <select name="activityName">
+                    <% acts.forEach( (acts) => { %>
+                        <option value=<%= acts.name %>> <%= acts.name %> </option>
+                    <% }) %>
+                </select> <br>
+                <!-- <input placeholder="Name of the activity" type="text" name="activityName"> <br> -->
+                <input placeholder="Amount to donate" type="number" name="money"> <br>
+                <button type="submit">Enviar</button>
+            </form>
         </main>
     
     </body>
